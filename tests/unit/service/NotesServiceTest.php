@@ -70,7 +70,7 @@ class NotesServiceTest extends PHPUnit_Framework_TestCase {
     }
 
     private function expectUserFolder($at=0) {
-        $path = '/' . $this->userId . '/files/Notes';
+        $path = '/' . $this->userId . '/files/notes';
         $this->root->expects($this->at($at))
             ->method('nodeExists')
             ->with($this->equalTo($path))
@@ -299,7 +299,7 @@ class NotesServiceTest extends PHPUnit_Framework_TestCase {
 
         $this->expectGenerateFileName(1, 'New note', 0, 2);
 
-        $path = '/' . $this->userId . '/files/Notes/New note (3).txt';
+        $path = '/' . $this->userId . '/files/notes/New note (3).txt';
         $nodes[0]->expects($this->once())
             ->method('move')
             ->with($this->equalTo($path));
@@ -326,7 +326,7 @@ class NotesServiceTest extends PHPUnit_Framework_TestCase {
 
         $this->expectGenerateFileName(1, 'some', 0, 2);
 
-        $path = '/' . $this->userId . '/files/Notes/some (3).txt';
+        $path = '/' . $this->userId . '/files/notes/some (3).txt';
         $nodes[0]->expects($this->once())
             ->method('move')
             ->with($this->equalTo($path));
